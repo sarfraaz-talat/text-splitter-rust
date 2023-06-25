@@ -14,7 +14,7 @@ This library replicates the functionality of the `CharacterTextSplitter` found i
 
 Add the following to your `Cargo.toml` file:
 
-```
+```yaml
 [dependencies]
 character_text_splitter = "0.1.0"
 ```
@@ -23,7 +23,7 @@ character_text_splitter = "0.1.0"
 
 Import the library and use the `CharacterTextSplitter` struct to split your text.
 
-```
+```rust
 use character_text_splitter::CharacterTextSplitter;
 
 let text = "your text here...";
@@ -38,7 +38,7 @@ for chunk in chunks {
 
 You can also specify the chunk_size, chunk_overlap size or the separator you want to use for the library, like this
 
-```
+```rust
     let splitter = CharacterTextSplitter::new()
         .with_chunk_size(300)
         .with_chunk_overlap(50)
