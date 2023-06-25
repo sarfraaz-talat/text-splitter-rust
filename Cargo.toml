@@ -1,0 +1,8 @@
+[package]
+name = "text_splitter"
+version = "0.1.0"
+edition = "2021"
+authors = ["Sarfraaz Talat <sarfraaz.talat@gmail.com>"]
+license = "MIT"
+
+[dependencies]
