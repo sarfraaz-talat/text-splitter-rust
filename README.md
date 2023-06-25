@@ -14,7 +14,7 @@ This library replicates the functionality of the `CharacterTextSplitter` found i
 
 Add the following to your `Cargo.toml` file:
 
-```yaml
+```toml
 [dependencies]
 character_text_splitter = "0.1.0"
 ```
