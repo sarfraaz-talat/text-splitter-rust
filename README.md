@@ -16,7 +16,7 @@ Add the following to your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-character_text_splitter = "0.1.0"
+character_text_splitter = "0.1.2"
 ```
 
 ## Usage
