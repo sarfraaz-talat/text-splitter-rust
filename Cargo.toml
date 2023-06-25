@@ -4,6 +4,6 @@ version = "0.1.1"
 edition = "2021"
 authors = ["Sarfraaz Talat <sarfraaz.talat@gmail.com>"]
 license = "MIT"
-description = "A Rust library for splitting text into chunks with overlap, designed for handling large amounts of text efficiently"
+description = "A Rust library for splitting text into chunks with overlap, designed for handling large amounts of text efficiently. Implementation is identical to langchain's CharacterTextSplitter"
 
 [dependencies]
