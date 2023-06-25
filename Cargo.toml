@@ -1,8 +1,9 @@
 [package]
-name = "text_splitter"
-version = "0.1.0"
+name = "character_text_splitter"
+version = "0.1.1"
 edition = "2021"
 authors = ["Sarfraaz Talat <sarfraaz.talat@gmail.com>"]
 license = "MIT"
+description = "A Rust library for splitting text into chunks with overlap, designed for handling large amounts of text efficiently"
 
 [dependencies]

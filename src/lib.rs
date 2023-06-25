@@ -5,14 +5,29 @@ pub struct CharacterTextSplitter {
 }
 
 impl CharacterTextSplitter {
-    pub fn new(chunk_size: usize, chunk_overlap: usize, separator: String) -> Self {
-        Self {
-            chunk_size,
-            chunk_overlap,
-            separator,
+    pub fn new() -> CharacterTextSplitter {
+        CharacterTextSplitter {
+            chunk_size: 200,
+            chunk_overlap: 40,
+            separator: "\n\n".to_string(),
         }
     }
 
+    pub fn with_chunk_size(mut self, chunk_size: usize) -> Self {
+        self.chunk_size = chunk_size;
+        self
+    }
+
+    pub fn with_chunk_overlap(mut self, chunk_overlap: usize) -> Self {
+        self.chunk_overlap = chunk_overlap;
+        self    
+    }
+
+    pub fn with_separator(mut self, separator: &str) -> Self {
+        self.separator = separator.to_string();
+        self
+    }
+    
     fn merge_splits(&self, splits: Vec<&str>) -> Vec<String> {
         let separator_len = self.separator.len();
         let mut docs: Vec<String> = Vec::new();

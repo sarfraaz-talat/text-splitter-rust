@@ -1,6 +1,8 @@
-# Rust Text Splitter
+# TextSplitter - Rust
 
-This is a Rust library for splitting text into chunks based on a given chunk size and overlap size.
+TextSplitter is a Rust library for splitting a text into chunks of specified size with an option to overlap.
+
+This library replicates the functionality of the `CharacterTextSplitter` found in the Python Langchain library, giving Rust users access to the same text splitting capabilities. It's designed to be straightforward to use and requires zero dependencies, making it a lightweight addition to any project.
 
 ## Features
 
@@ -14,7 +16,7 @@ Add the following to your `Cargo.toml` file:
 
 ```
 [dependencies]
-text_splitter = "0.1.0"
+character_text_splitter = "0.1.0"
 ```
 
 ## Usage
@@ -22,22 +24,28 @@ text_splitter = "0.1.0"
 Import the library and use the `CharacterTextSplitter` struct to split your text.
 
 ```
-use text_splitter::CharacterTextSplitter;
+use character_text_splitter::CharacterTextSplitter;
 
-fn main() {
-    let text = "your text here...";
-    let chunk_size = 200;
-    let chunk_overlap = 50;
-    let separator = String::from(". ");
+let text = "your text here...";
 
-    let splitter = CharacterTextSplitter::new(chunk_size, chunk_overlap, separator);
-    let chunks = splitter.split_text(text);
+let splitter = CharacterTextSplitter::new();
+let chunks = splitter.split_text(text);
 
-    for chunk in chunks {
-        println!("{}", chunk);
-    }
+for chunk in chunks {
+    println!("{}", chunk);
 }
 ```
+
+You can also specify the chunk_size, chunk_overlap size or the separator you want to use for the library, like this
+
+```
+    let splitter = CharacterTextSplitter::new()
+        .with_chunk_size(300)
+        .with_chunk_overlap(50)
+        .with_separator(". ");
+```
+
+Default value for `chunk_size` is `200`, `chunk_overlap` is `40` and default `separator` is `\n\n`
 
 ## License
 
